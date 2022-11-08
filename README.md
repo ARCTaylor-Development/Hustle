@@ -23,3 +23,5 @@ other: [Node JS](https://nodejs.org/en/)
 
 ### What Skills do I need for Development?
 Please refer to the `learn` folder for resources for learning HTML, CSS, JS, and more.
+
+--------------------
