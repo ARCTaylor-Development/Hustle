@@ -24,6 +24,5 @@ other: [Node JS](https://nodejs.org/en/)
 ### What Skills do I need for Development?
 Please refer to the `learn` folder for resources for learning HTML, CSS, JS, and more.
 
-### Temporary Website Link
+### Temporary Website Link  
 http://hustleapp-20221108154524-hostingbucket-dev.s3-website-us-west-2.amazonaws.com/#/
---------------------
