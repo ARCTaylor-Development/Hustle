@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-hustleapp-dev-154307-authRole",
+      "UnauthRoleArn": "arn:aws:iam::880604427769:role/amplify-hustleapp-dev-154307-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::880604427769:role/amplify-hustleapp-dev-154307-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-hustleapp-dev-154307-deployment",
+      "UnauthRoleName": "amplify-hustleapp-dev-154307-unauthRole",
+      "StackName": "amplify-hustleapp-dev-154307",
+      "StackId": "arn:aws:cloudformation:us-west-2:880604427769:stack/amplify-hustleapp-dev-154307/19ce34d0-5fbf-11ed-8ce3-0a92345f7029",
+      "AmplifyAppId": "d2jhoe1irdavcm"
+    },
+    "categories": {
+      "hosting": {
+        "S3AndCloudFront": {}
+      }
+    }
+  }
+}
