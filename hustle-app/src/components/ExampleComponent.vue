@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>{{ title }}</p>
+    <h1>{{ title }}</h1>
     <ul>
       <li v-for="todo in todos" :key="todo.id" @click="increment">
         {{ todo.id }} - {{ todo.content }}
@@ -62,3 +62,20 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped>
+   h1 {
+    color: white;
+    font-size: 3rem;
+   }
+
+   p {
+    color: white;
+    font-size: 1rem;
+   }
+
+   ul {
+    color: white;
+    font-size: 1rem;
+   }
+</style>
