@@ -1,54 +1,53 @@
 <template>
-  <q-page class="row items-center justify-evenly" style="background-color: darkblue;">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
-  </q-page>
+  <q-page v-touch-pan.mouse="handlePan" class="">
+
+    <task-bubble title="Test Bubble" color="green" size="48px" :position=posArrays.btn1></task-bubble>
+    <task-bubble title="Test Bubble" color="purple" size="20px" :position=posArrays.btn2></task-bubble>
+    <task-bubble title="Test Bubble" color="orange" size="32px" :position=posArrays.btn3></task-bubble>
+
   <q-page-sticky position="bottom-right" :offset="[18, 18]">
   <task-fab></task-fab>
   </q-page-sticky>
+  </q-page>
 </template>
 
-<script lang="ts">
-import { Todo, Meta } from 'components/models';
-import TaskFab from 'src/components/TaskFab.vue';
-import ExampleComponent from 'components/ExampleComponent.vue';
-import { defineComponent, ref } from 'vue';
+<script setup lang="ts">
 
-export default defineComponent({
-  name: 'IndexPage',
-  components: { ExampleComponent, TaskFab },
-  setup () {
-    const todos = ref<Todo[]>([
-      {
-        id: 1,
-        content: 'ct1'
-      },
-      {
-        id: 2,
-        content: 'ct2'
-      },
-      {
-        id: 3,
-        content: 'ct3'
-      },
-      {
-        id: 4,
-        content: 'ct4'
-      },
-      {
-        id: 5,
-        content: 'ct5'
-      }
-    ]);
-    const meta = ref<Meta>({
-      totalCount: 1200
+  import { date } from 'quasar';
+  import TaskBubble from 'src/components/TaskBubble.vue';
+  import TaskFab from 'src/components/TaskFab.vue';
+  import { createBlock, defineComponent, ref, computed, Ref} from 'vue';
+
+  function handlePan(event) {
+    let offX = event.delta.x;
+    let offY = event.delta.y;
+
+    Object.keys(posArrays.value).map(key => {
+      let arr = posArrays.value[key as keyof object];
+      posArrays.value[key as keyof object] = [arr[0]+offX, arr[1]+offY];
     });
-    return { todos, meta };
-  
   }
-});
+
+  //Remove 'rem' and convert to int
+  function sizeToInt(str: string) {
+    return parseInt(str.substring(0, str.length-2))
+  }
+
+  const w = window.innerWidth;
+  const h = window.innerHeight
+  const r = sizeToInt("48px") * 1.5;
+
+  const posArrays = ref({
+    btn1: [w/2 - r, h/2 - r],
+    btn2: [w/2 - r - 150, h/2 - r - 100],
+    btn3: [w/2 - r + 150, h/2 - r + 50]
+  });
+
 </script>
+
+<style scoped>
+  .q-page {
+    /* background-color: black; */
+    background-image: url('..\assets\space-background.svg');
+  }
+</style>
