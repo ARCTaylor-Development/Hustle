@@ -1,21 +1,17 @@
 <template>
-    <div class="taskFab">
-        <q-btn
-        text-color="black"
-        padding="sm"
-        icon="add"
-        color="white"/>
-    </div>
+    <q-btn
+    @click="handleClick"
+    text-color="black"
+    padding="sm"
+    icon="add"
+    color="white"/>
 </template>
 
-<script>
-export default ({
-    setup() {
-        return {
-            OnClick(){
-                console.log("Add new task")
-            }
-        }
+<script setup language="ts">
+
+
+    function handleClick(event) {
+        console.log("Task button clicked");
     }
-})
+
 </script>
