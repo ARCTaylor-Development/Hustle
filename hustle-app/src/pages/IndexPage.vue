@@ -1,4 +1,5 @@
 <template>
+
   <q-page v-touch-pan.mouse="handlePan" class="">
 
     <task-bubble title="Test Bubble" color="green" size="48px" :position=posArrays.btn1></task-bubble>
