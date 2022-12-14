@@ -1,26 +1,29 @@
 <template>
 
-  <q-page v-touch-pan.mouse="handlePan" class="">
+  <q-page v-touch-pan.mouse="handlePan">
 
     <task-bubble title="Test Bubble" color="green" size="48px" :position=posArrays.btn1></task-bubble>
     <task-bubble title="Test Bubble" color="purple" size="20px" :position=posArrays.btn2></task-bubble>
     <task-bubble title="Test Bubble" color="orange" size="32px" :position=posArrays.btn3></task-bubble>
 
   <q-page-sticky position="bottom-right" :offset="[18, 18]">
-  <task-fab></task-fab>
+    <task-fab/>
   </q-page-sticky>
+
   <q-page-sticky position="bottom-left" :offset="[18,18]">
-  <recenter-fab></recenter-fab>
+    <recenter-fab/>
   </q-page-sticky>
+
   </q-page>
+
 </template>
 
 <script setup lang="ts">
 
   import { date } from 'quasar';
-  import TaskBubble from 'src/components/TaskBubble.vue';
-  import TaskFab from 'src/components/TaskFab.vue';
-  import RecenterFab from 'src/components/RecenterFab.vue'
+  import TaskBubble from 'src/components/home-page-components/TaskBubble.vue';
+  import TaskFab from 'src/components/home-page-components/TaskFab.vue';
+  import RecenterFab from 'src/components/home-page-components/RecenterFab.vue'
   import { createBlock, defineComponent, ref, computed, Ref} from 'vue';
 
   function handlePan(event) {
@@ -40,7 +43,7 @@
 
   const w = window.innerWidth;
   const h = window.innerHeight
-  const r = sizeToInt("48px") * 1.5;
+  const r = sizeToInt('48px') * 1.5;
 
   const posArrays = ref({
     btn1: [w/2 - r, h/2 - r],

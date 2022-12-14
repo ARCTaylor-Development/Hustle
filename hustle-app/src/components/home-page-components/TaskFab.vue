@@ -7,11 +7,11 @@
     color="white"/>
 </template>
 
-<script setup language="ts">
+<script setup lang="ts">
 
 
     function handleClick(event) {
-        console.log("Task button clicked");
+        console.log('Task button clicked');
     }
 
 </script>
