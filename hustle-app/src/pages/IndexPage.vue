@@ -9,7 +9,7 @@
   <task-fab></task-fab>
   </q-page-sticky>
   <q-page-sticky position="bottom-left" :offset="[18,18]">
-  <recenter-fab></recenter-fab>
+  <recenter-fab show="True"></recenter-fab>
   </q-page-sticky>
   </q-page>
 </template>

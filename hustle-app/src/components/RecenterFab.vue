@@ -1,6 +1,6 @@
 <template>
     <q-btn 
-    v-if="show"
+    v-if=show
     @click="handleClick"
     text-color="black"
     padding="sm"
@@ -10,16 +10,13 @@
 </template>
 
 <script setup>
-import { createBlock, defineComponent, ref, computed} from 'vue';
 
 function handleClick(event) {
     dist.value = 0
 }
 
 const props = defineProps({
+    show: Boolean
 });
-
-const dist = ref(500);
-const show = computed(() => (dist.value > 100));
 
 </script>
