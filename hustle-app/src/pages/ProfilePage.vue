@@ -63,7 +63,7 @@
   }
 
   div {
-    margin: 20px;
+    margin-bottom: 20px;
   }
 
   h2 {
