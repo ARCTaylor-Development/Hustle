@@ -1,6 +1,6 @@
 <template>
     <q-btn 
-    v-if="show"
+    v-if=show
     @click="$router.push('/profile')"
     text-color="black"
     padding="sm"
@@ -9,14 +9,14 @@
     />
 </template>
 
-<script setup lang="ts">
-import { createBlock, defineComponent, ref, computed} from 'vue';
+<script setup>
 
 function handleClick(event) {
     dist.value = 0
 }
 
-const dist = ref(500);
-const show = computed(() => (dist.value > 100));
+const props = defineProps({
+    show: Boolean
+});
 
 </script>

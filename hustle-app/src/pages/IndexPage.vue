@@ -11,7 +11,7 @@
   </q-page-sticky>
 
   <q-page-sticky position="bottom-left" :offset="[18,18]">
-    <recenter-fab/>
+  <recenter-fab show="True"/>
   </q-page-sticky>
 
   </q-page>
