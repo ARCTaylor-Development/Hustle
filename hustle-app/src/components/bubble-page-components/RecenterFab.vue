@@ -1,7 +1,7 @@
 <template>
     <q-btn 
     v-if=show
-    @click="$router.push('/profile')"
+    @click="$emit('resetPos')"
     text-color="black"
     padding="sm"
     icon="home"
@@ -10,6 +10,9 @@
 </template>
 
 <script setup>
+import { defineEmits,watch,ref } from 'vue'
+    
+const emit = defineEmits(['resetPos']);
 
 function handleClick(event) {
     dist.value = 0

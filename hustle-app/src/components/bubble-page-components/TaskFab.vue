@@ -1,14 +1,16 @@
 <template>    
     <q-btn
-    @click="handleClick"
+    @click="show = true;"
     text-color="black"
     padding="sm"
     icon="add"
     color="white" >
-        <q-menu square cover persistent max-width="100vw" max-height="100vh">
+    </q-btn>
+
+    <q-menu v-if="show" square cover persistent max-width="100vw" max-height="100vh">
             <q-form anchor="top right" self="bottom left" transition-show="fade">
                 <div>
-                    <q-btn class="float-right" icon="close" color="red" text-color="white" />
+                    <q-btn @click="show = false;" class="float-right" icon="close" color="red" text-color="white" />
                     <h1>New Task</h1>
                 </div>
                 <h2>Priority</h2>
@@ -44,31 +46,26 @@
                 
             </q-form>
         </q-menu>
-    </q-btn>
 
 <!-- icon="img:\src\assets\ExMark.svg" -->
 </template>
 
 <script setup>
     import { ref } from 'vue'
-    import AddTaskForm from 'src/components/home-page-components/RecenterFab.vue'
+    import AddTaskForm from 'src/components/bubble-page-components/RecenterFab.vue'
 
     const props = defineProps({
- 
     });
 
-    function handleClick(event) {
-        show.value = true;
-        console.log(show);
-    }
-
     const show = ref(false);
+
     const ratingModel = ref(4);
     const ratingColors = [ 'light-green-13', 'yellow-12', 'amber-6', 'orange-10', 'red' ];
 
     const name = ref(null);
     const description = ref(null);
     const dueDate = ref(null);
+
 
 </script>
 

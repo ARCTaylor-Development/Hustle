@@ -26,6 +26,10 @@
       </li>
     </div>
 
+    <q-page-sticky position="left" :offset="[10, 0]">
+      <q-btn @click="$router.push('/bubbles')" color="white" text-color="black" icon="arrow_back_ios"/>
+    </q-page-sticky>
+    
       </q-page>
 </template>
 
@@ -44,7 +48,8 @@
   const followers = [
     {name: 'Taiden Aylor', image: '../../assets/bergquist-progile.jpeg', id: '4'},
     {name: 'Sack Janford', image: '../../assets/bergquist-progile.jpeg', id: '5'},
-    {name: 'Pautumn Elton', image: '../../assets/bergquist-progile.jpeg', id: '6'}
+    {name: 'Pautumn Elton', image: '../../assets/bergquist-progile.jpeg', id: '6'},
+    {name: 'In Fallbright', image: '../../assets/bergquist-progile.jpeg', id: '7'}
   ]
 
   const profPic = '..\assets\bergquist-profile.jpeg';
